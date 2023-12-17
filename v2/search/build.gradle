@@ -8,11 +8,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "co.ninetynine.android.exercisev2.search"
         minSdk 16
-        targetSdk 31
-        versionCode 1
-        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -36,6 +32,7 @@ android {
     buildFeatures {
         viewBinding true
     }
+    namespace 'co.ninetynine.android.exercisev2.search'
 
 }
 

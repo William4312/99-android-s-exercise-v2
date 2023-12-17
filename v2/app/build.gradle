@@ -39,6 +39,7 @@ android {
     }
 
     dynamicFeatures = [':search']
+    namespace 'co.ninetynine.android.exercisev2'
 }
 
 dependencies {
