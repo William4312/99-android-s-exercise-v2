@@ -23,5 +23,4 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
             Constants.CLASS_NAME_ACTIVITY_SEARCH
         )
     }
-
 }

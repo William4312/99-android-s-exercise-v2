@@ -3,19 +3,33 @@ package co.ninetynine.android.exercisev2.search.viewmodel
 import androidx.lifecycle.*
 import co.ninetynine.android.exercisev2.search.data.repository.SearchRepository
 import co.ninetynine.android.exercisev2.search.model.ListingItem
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class SearchViewModel(
-    val repository: SearchRepository,
+@HiltViewModel
+class SearchViewModel @Inject constructor(
+    private val repository: SearchRepository,
 ) : ViewModel() {
     private val _listingItems = MutableLiveData<List<ListingItem>>()
     val listingItems: LiveData<List<ListingItem>> = _listingItems
+
+    private val _error = MutableLiveData<String>()
+    val error: LiveData<String> = _error
 
     init {
         fetchSearchResults()
     }
 
     private fun fetchSearchResults() {
-        // TODO: Fetch result from `repository` and update `_listingItems` live data
+        viewModelScope.launch {
+            try {
+                val results = repository.getSearchResults()
+                _listingItems.postValue(results)
+            } catch (e: Exception) {
+                _error.postValue("Failed to fetch data: ${e.message}")
+            }
+        }
     }
 }
 

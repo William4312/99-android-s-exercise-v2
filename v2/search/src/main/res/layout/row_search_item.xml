@@ -1,18 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:clickable="true"
-    android:focusable="true"
-    android:foreground="?selectableItemBackground"
-    android:orientation="vertical">
+    android:layout_margin="8dp"
+    android:padding="12dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="8dp">
 
-    <TextView
-        android:id="@+id/placeholder"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Item Placeholder"
-        android:textSize="16sp" />
+        android:padding="16dp">
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/image_property"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_placeholder_image" />
+
+        <TextView
+            android:id="@+id/text_project_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image_property"
+            android:text="Parkview Apartments"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/text_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_project_name"
+            android:text="12 Meyappa Chettiar Rd - D13"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/text_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_address"
+            android:text="3 Beds • 2 Baths • 2,561 sqft"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/text_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_details"
+            android:text="$5,700/mo"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="8dp" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
+

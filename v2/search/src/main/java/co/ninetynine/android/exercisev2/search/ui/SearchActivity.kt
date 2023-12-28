@@ -11,9 +11,11 @@ import co.ninetynine.android.exercisev2.search.model.ListingItem
 import co.ninetynine.android.exercisev2.search.viewmodel.SearchViewModel
 import co.ninetynine.android.exercisev2.search.viewmodel.SearchViewModelFactory
 import co.ninetynine.android.exercisev2.ui.BaseActivity
+import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.EntryPointAccessors
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class SearchActivity : BaseActivity<ActivitySearchBinding>() {
 
     @Inject
